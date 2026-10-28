@@ -23,11 +23,26 @@ npx expo install --fix      # fix incompatible package versions
 
 Run lint and typecheck before declaring any task done.
 
-## Navigation & Routing
+## Architecture
 
-- Use **Expo Router** for all navigation. Routes live in `src/app/` — every file there is a screen, `_layout.tsx` files define navigators. Keep non-route code (components, hooks, utils) outside `src/app/`.
-- Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
-- Docs: https://docs.expo.dev/router/introduction.md
+Navigation uses **React Navigation** (not Expo Router). Every route is declared in `App.tsx`; screen names live in `src/constant/routes.ts`; `index.tsx` only mounts `<App />`.
+
+```
+screens  ->  hooks / components  ->  services / utils  ->  types / constant
+```
+
+A layer may only import from layers to its right.
+
+- `src/constant/`: fixed values (theme, input rules, route names, storage keys). No React.
+- `src/types/`: shared TypeScript types only.
+- `src/utils/`: small pure functions.
+- `src/context/`: app-wide React state (the service provider).
+- `src/services/`: everything outside the UI (API, mock, storage, haptics). Screens never call `fetch`.
+- `src/hooks/`: reusable screen logic.
+- `src/components/ui/` (generic) and `src/components/results/` (Sucrose-specific): no data fetching.
+- `src/screens/`: one file per screen, layout and wiring only.
+
+Backend: `src/services/sucrose/sucrose-api.service.ts` calls the hosted API (override with `EXPO_PUBLIC_API_URL`). Set `EXPO_PUBLIC_USE_MOCK=true` in `.env.local` to use sample data instead.
 
 ## Building with EAS
 
