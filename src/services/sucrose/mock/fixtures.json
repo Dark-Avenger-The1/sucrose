@@ -1,0 +1,3431 @@
+{
+  "_note": "Sample responses for UI development, recorded from the ECLAT model v2.1. Not used once a real SucroseService is plugged in.",
+  "bands": [
+    {
+      "label": "Low (hypoglycemia)",
+      "tone": "low",
+      "minMgDl": 0,
+      "maxMgDl": 70
+    },
+    {
+      "label": "Normal",
+      "tone": "normal",
+      "minMgDl": 70,
+      "maxMgDl": 100
+    },
+    {
+      "label": "Prediabetes",
+      "tone": "elevated",
+      "minMgDl": 100,
+      "maxMgDl": 126
+    },
+    {
+      "label": "Diabetes",
+      "tone": "high",
+      "minMgDl": 126,
+      "maxMgDl": null
+    }
+  ],
+  "scale": [
+    {
+      "label": "Under 80",
+      "minMgDl": 0,
+      "maxMgDl": 80,
+      "tone": "low"
+    },
+    {
+      "label": "80–99",
+      "minMgDl": 80,
+      "maxMgDl": 100,
+      "tone": "normal"
+    },
+    {
+      "label": "100–119",
+      "minMgDl": 100,
+      "maxMgDl": 120,
+      "tone": "elevated"
+    },
+    {
+      "label": "120–139",
+      "minMgDl": 120,
+      "maxMgDl": 140,
+      "tone": "elevated"
+    },
+    {
+      "label": "140–159",
+      "minMgDl": 140,
+      "maxMgDl": 160,
+      "tone": "high"
+    },
+    {
+      "label": "160–179",
+      "minMgDl": 160,
+      "maxMgDl": 180,
+      "tone": "high"
+    },
+    {
+      "label": "180–199",
+      "minMgDl": 180,
+      "maxMgDl": 200,
+      "tone": "high"
+    },
+    {
+      "label": "200+",
+      "minMgDl": 200,
+      "maxMgDl": null,
+      "tone": "high"
+    }
+  ],
+  "notes": {
+    "low": "Below 70 mg/dL is low blood glucose. Seek medical advice.",
+    "high": "A fasting glucose of 100 mg/dL or more should be confirmed and discussed with a doctor."
+  },
+  "scenarios": {
+    "low": {
+      "sampleInput": {
+        "glucoseMgDl": 65,
+        "age": 25,
+        "gender": "male"
+      },
+      "foods": [
+        {
+          "id": "White bread and rolls",
+          "name": "White bread and rolls",
+          "netCarbsPer100g": 47.6,
+          "source": "model",
+          "variants": [
+            {
+              "code": 51101000,
+              "name": "Bread, white",
+              "netCarbsPer100g": 46.9
+            },
+            {
+              "code": 51150000,
+              "name": "Roll, white, soft",
+              "netCarbsPer100g": 48.3
+            },
+            {
+              "code": 51180010,
+              "name": "Bagel",
+              "netCarbsPer100g": 50.8
+            },
+            {
+              "code": 51101010,
+              "name": "Bread, white, toasted",
+              "netCarbsPer100g": 51.5
+            },
+            {
+              "code": 51185000,
+              "name": "Croutons",
+              "netCarbsPer100g": 58.5
+            },
+            {
+              "code": 51154100,
+              "name": "Roll, white, hamburger bun",
+              "netCarbsPer100g": 48.3
+            },
+            {
+              "code": 51101050,
+              "name": "Bread, white, made from home recipe or purchased at a bakery",
+              "netCarbsPer100g": 48.4
+            },
+            {
+              "code": 51157000,
+              "name": "Roll, white, hoagie, submarine",
+              "netCarbsPer100g": 48.3
+            },
+            {
+              "code": 51109010,
+              "name": "Bread, Italian, Grecian, Armenian",
+              "netCarbsPer100g": 46
+            },
+            {
+              "code": 51161250,
+              "name": "Pan Dulce, no topping",
+              "netCarbsPer100g": 54.1
+            },
+            {
+              "code": 51107010,
+              "name": "Bread, French or Vienna",
+              "netCarbsPer100g": 49.7
+            },
+            {
+              "code": 51121035,
+              "name": "Garlic bread, from frozen",
+              "netCarbsPer100g": 39.2
+            },
+            {
+              "code": 51186010,
+              "name": "Muffin, English",
+              "netCarbsPer100g": 40.7
+            }
+          ]
+        },
+        {
+          "id": "Fresh fruit",
+          "name": "Fresh fruit",
+          "netCarbsPer100g": 13.4,
+          "source": "model",
+          "variants": [
+            {
+              "code": 63107010,
+              "name": "Banana, raw",
+              "netCarbsPer100g": 20.2
+            },
+            {
+              "code": 63101000,
+              "name": "Apple, raw",
+              "netCarbsPer100g": 11.4
+            },
+            {
+              "code": 63105010,
+              "name": "Avocado, raw",
+              "netCarbsPer100g": 1.8
+            },
+            {
+              "code": 63149010,
+              "name": "Watermelon, raw",
+              "netCarbsPer100g": 7.2
+            },
+            {
+              "code": 63141010,
+              "name": "Pineapple, raw",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 63109010,
+              "name": "Cantaloupe, raw",
+              "netCarbsPer100g": 7.4
+            },
+            {
+              "code": 63129010,
+              "name": "Mango, raw",
+              "netCarbsPer100g": 13.4
+            },
+            {
+              "code": 63137010,
+              "name": "Pear, raw",
+              "netCarbsPer100g": 12.1
+            },
+            {
+              "code": 63135010,
+              "name": "Peach, raw",
+              "netCarbsPer100g": 8.6
+            },
+            {
+              "code": 63127010,
+              "name": "Honeydew melon, raw",
+              "netCarbsPer100g": 8.3
+            },
+            {
+              "code": 63115010,
+              "name": "Cherries, raw",
+              "netCarbsPer100g": 13.9
+            },
+            {
+              "code": 63135140,
+              "name": "Peach, canned, in syrup",
+              "netCarbsPer100g": 12.4
+            },
+            {
+              "code": 63126500,
+              "name": "Kiwi fruit, raw",
+              "netCarbsPer100g": 11
+            },
+            {
+              "code": 63143010,
+              "name": "Plum, raw",
+              "netCarbsPer100g": 10
+            }
+          ]
+        },
+        {
+          "id": "Milk",
+          "name": "Milk",
+          "netCarbsPer100g": 4.8,
+          "source": "model",
+          "variants": [
+            {
+              "code": 11112110,
+              "name": "Milk, reduced fat (2%)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11111000,
+              "name": "Milk, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11112210,
+              "name": "Milk, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 11113000,
+              "name": "Milk, fat free (skim)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11100000,
+              "name": "Milk, NFS",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11114350,
+              "name": "Milk, lactose free, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11114300,
+              "name": "Milk, lactose free, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            }
+          ]
+        },
+        {
+          "id": "Salad vegetables",
+          "name": "Salad vegetables",
+          "netCarbsPer100g": 3.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75113000,
+              "name": "Lettuce, raw",
+              "netCarbsPer100g": 1.7
+            },
+            {
+              "code": 75111000,
+              "name": "Cucumber, raw",
+              "netCarbsPer100g": 3.1
+            },
+            {
+              "code": 75117020,
+              "name": "Onions, raw",
+              "netCarbsPer100g": 7.6
+            },
+            {
+              "code": 75114000,
+              "name": "Mixed salad greens, raw",
+              "netCarbsPer100g": 1.5
+            },
+            {
+              "code": 75109000,
+              "name": "Celery, raw",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 75122000,
+              "name": "Pepper, raw, NFS",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75103000,
+              "name": "Cabbage, green, raw",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75140990,
+              "name": "Cabbage salad or coleslaw, from fast food / restaurant",
+              "netCarbsPer100g": 10.5
+            },
+            {
+              "code": 75109550,
+              "name": "Cilantro, raw",
+              "netCarbsPer100g": 1.6
+            },
+            {
+              "code": 75121000,
+              "name": "Pepper, hot chili, raw",
+              "netCarbsPer100g": 5.6
+            },
+            {
+              "code": 75122100,
+              "name": "Pepper, sweet, green, raw",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 75105000,
+              "name": "Cabbage, red, raw",
+              "netCarbsPer100g": 5.4
+            },
+            {
+              "code": 75107000,
+              "name": "Cauliflower, raw",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75122200,
+              "name": "Pepper, sweet, red, raw",
+              "netCarbsPer100g": 3.9
+            },
+            {
+              "code": 75125000,
+              "name": "Radish, raw",
+              "netCarbsPer100g": 1.7
+            }
+          ]
+        },
+        {
+          "id": "Rice and oatmeal",
+          "name": "Rice and oatmeal",
+          "netCarbsPer100g": 20,
+          "source": "model",
+          "variants": [
+            {
+              "code": 56205008,
+              "name": "Rice, white, cooked, no added fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56205001,
+              "name": "Rice, white, cooked, NS as to fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56203056,
+              "name": "Oatmeal, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 9.7
+            },
+            {
+              "code": 56205002,
+              "name": "Rice, white, cooked, made with oil",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205000,
+              "name": "Rice, cooked, NFS",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56205004,
+              "name": "Rice, white, cooked, made with butter",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205018,
+              "name": "Rice, brown, cooked, no added fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56203066,
+              "name": "Oatmeal, regular or quick, made with milk, no added fat",
+              "netCarbsPer100g": 14.6
+            },
+            {
+              "code": 56203130,
+              "name": "Oatmeal, instant, maple flavored, no added fat",
+              "netCarbsPer100g": 18.3
+            },
+            {
+              "code": 56205006,
+              "name": "Rice, white, cooked, made with margarine",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56203155,
+              "name": "Oatmeal, instant, fruit flavored, no added fat",
+              "netCarbsPer100g": 18.2
+            },
+            {
+              "code": 56205011,
+              "name": "Rice, brown, cooked, NS as to fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56201052,
+              "name": "Grits, regular or quick, made with water, fat added",
+              "netCarbsPer100g": 11.5
+            },
+            {
+              "code": 56201051,
+              "name": "Grits, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 56203610,
+              "name": "Oatmeal, multigrain, no added fat",
+              "netCarbsPer100g": 10.2
+            }
+          ]
+        },
+        {
+          "id": "Deli meats and sausages",
+          "name": "Deli meats and sausages",
+          "netCarbsPer100g": 2.1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 25230780,
+              "name": "Turkey, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 25230210,
+              "name": "Ham, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 0.3
+            },
+            {
+              "code": 25221405,
+              "name": "Pork sausage",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 25221350,
+              "name": "Italian sausage",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 25220410,
+              "name": "Bologna, NFS",
+              "netCarbsPer100g": 6.3
+            },
+            {
+              "code": 25230320,
+              "name": "Chicken, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 25231110,
+              "name": "Beef, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 0.6
+            },
+            {
+              "code": 25221310,
+              "name": "Polish sausage",
+              "netCarbsPer100g": 5
+            },
+            {
+              "code": 25220350,
+              "name": "Bratwurst",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 25221830,
+              "name": "Turkey or chicken sausage",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 25221400,
+              "name": "Sausage, NFS",
+              "netCarbsPer100g": 1.4
+            }
+          ]
+        },
+        {
+          "id": "Cooked vegetables",
+          "name": "Cooked vegetables",
+          "netCarbsPer100g": 6.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75221021,
+              "name": "Onions, cooked, fat added",
+              "netCarbsPer100g": 8.7
+            },
+            {
+              "code": 75205005,
+              "name": "Green beans, cooked, from restaurant",
+              "netCarbsPer100g": 4.2
+            },
+            {
+              "code": 75209021,
+              "name": "Brussels sprouts, fresh, cooked, fat added",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 75205021,
+              "name": "Green beans, fresh, cooked, no added fat",
+              "netCarbsPer100g": 4.4
+            },
+            {
+              "code": 75215990,
+              "name": "Corn, cooked, from restaurant",
+              "netCarbsPer100g": 15.9
+            },
+            {
+              "code": 75214021,
+              "name": "Cauliflower, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75217020,
+              "name": "Eggplant, cooked, fat added",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75216120,
+              "name": "Corn, NS as to form, cooked",
+              "netCarbsPer100g": 12
+            },
+            {
+              "code": 75205023,
+              "name": "Green beans, canned, cooked, no added fat",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 75211020,
+              "name": "Cabbage, green, cooked, no added fat",
+              "netCarbsPer100g": 3.4
+            },
+            {
+              "code": 75226020,
+              "name": "Peppers, green, cooked",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75202021,
+              "name": "Asparagus, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 1.9
+            },
+            {
+              "code": 75211032,
+              "name": "Cabbage, green, cooked with butter or margarine",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75226111,
+              "name": "Hot peppers, cooked",
+              "netCarbsPer100g": 5.5
+            },
+            {
+              "code": 75233021,
+              "name": "Summer squash, yellow or green, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 2.8
+            }
+          ]
+        },
+        {
+          "id": "Wheat bread",
+          "name": "Wheat bread",
+          "netCarbsPer100g": 41.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 51301010,
+              "name": "Bread, wheat or cracked wheat",
+              "netCarbsPer100g": 43.6
+            },
+            {
+              "code": 51300110,
+              "name": "Bread, whole wheat",
+              "netCarbsPer100g": 37.1
+            },
+            {
+              "code": 51301020,
+              "name": "Bread, wheat or cracked wheat, toasted",
+              "netCarbsPer100g": 47.9
+            },
+            {
+              "code": 51300175,
+              "name": "Bread, chappatti or roti, wheat",
+              "netCarbsPer100g": 36.4
+            },
+            {
+              "code": 51300120,
+              "name": "Bread, whole wheat, toasted",
+              "netCarbsPer100g": 40.7
+            },
+            {
+              "code": 51320010,
+              "name": "Roll, wheat or cracked wheat",
+              "netCarbsPer100g": 42.2
+            },
+            {
+              "code": 51300050,
+              "name": "Bread, whole grain white",
+              "netCarbsPer100g": 34.8
+            },
+            {
+              "code": 51301040,
+              "name": "Bread, wheat or cracked wheat, made from home recipe or purchased at bakery",
+              "netCarbsPer100g": 45.8
+            },
+            {
+              "code": 51301600,
+              "name": "Bread, pita, whole wheat",
+              "netCarbsPer100g": 49.8
+            },
+            {
+              "code": 51300185,
+              "name": "Bread, paratha, wheat",
+              "netCarbsPer100g": 35.8
+            },
+            {
+              "code": 51301620,
+              "name": "Bread, pita, wheat or cracked wheat",
+              "netCarbsPer100g": 49.8
+            },
+            {
+              "code": 51300140,
+              "name": "Bread, whole wheat, made from home recipe or purchased at bakery",
+              "netCarbsPer100g": 40.6
+            },
+            {
+              "code": 51301800,
+              "name": "Bagel, wheat, with raisins",
+              "netCarbsPer100g": 47.8
+            },
+            {
+              "code": 51303030,
+              "name": "Muffin, English, whole wheat",
+              "netCarbsPer100g": 40.2
+            },
+            {
+              "code": 51301750,
+              "name": "Bagel, whole wheat",
+              "netCarbsPer100g": 44.8
+            }
+          ]
+        },
+        {
+          "id": "Citrus juice",
+          "name": "Citrus juice",
+          "netCarbsPer100g": 10.9,
+          "source": "model",
+          "variants": [
+            {
+              "code": 61210220,
+              "name": "Orange juice, 100%, canned, bottled or in a carton",
+              "netCarbsPer100g": 11.2
+            },
+            {
+              "code": 61210250,
+              "name": "Orange juice, 100%, with calcium added, canned, bottled or in a carton",
+              "netCarbsPer100g": 11
+            },
+            {
+              "code": 61204000,
+              "name": "Lemon juice, 100%, NS as to form",
+              "netCarbsPer100g": 6.8
+            },
+            {
+              "code": 61204010,
+              "name": "Lemon juice, 100%, freshly squeezed",
+              "netCarbsPer100g": 6.6
+            },
+            {
+              "code": 61210000,
+              "name": "Orange juice, 100%, NFS",
+              "netCarbsPer100g": 11.2
+            },
+            {
+              "code": 61210010,
+              "name": "Orange juice, 100%,  freshly squeezed",
+              "netCarbsPer100g": 10.2
+            },
+            {
+              "code": 61207000,
+              "name": "Lime juice, 100%, NS as to form",
+              "netCarbsPer100g": 8.1
+            },
+            {
+              "code": 61207010,
+              "name": "Lime juice, 100%, freshly squeezed",
+              "netCarbsPer100g": 8
+            },
+            {
+              "code": 61213800,
+              "name": "Fruit juice blend, citrus, 100% juice",
+              "netCarbsPer100g": 12
+            }
+          ]
+        },
+        {
+          "id": "Scrambled eggs and omelets",
+          "name": "Scrambled eggs and omelets",
+          "netCarbsPer100g": 1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 32130080,
+              "name": "Egg omelet or scrambled egg, from fast food / restaurant",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130010,
+              "name": "Egg omelet or scrambled egg, made with oil",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130110,
+              "name": "Egg omelet or scrambled egg, with cheese, made with oil",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130070,
+              "name": "Egg omelet or scrambled egg, no added fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130000,
+              "name": "Egg omelet or scrambled egg, made with margarine",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32129990,
+              "name": "Egg omelet or scrambled egg, NS as to fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130020,
+              "name": "Egg omelet or scrambled egg, made with butter",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130120,
+              "name": "Egg omelet or scrambled egg, with cheese, made with butter",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130400,
+              "name": "Egg omelet or scrambled egg, with tomatoes, fat added",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130490,
+              "name": "Egg omelet or scrambled egg, with vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1
+            },
+            {
+              "code": 32130060,
+              "name": "Egg omelet or scrambled egg, made with cooking spray",
+              "netCarbsPer100g": 0.9
+            },
+            {
+              "code": 32130290,
+              "name": "Egg omelet or scrambled egg, with cheese and meat, NS as to fat",
+              "netCarbsPer100g": 1.2
+            },
+            {
+              "code": 32130210,
+              "name": "Egg omelet or scrambled egg, with meat, made with oil",
+              "netCarbsPer100g": 0.8
+            },
+            {
+              "code": 32130690,
+              "name": "Egg omelet or scrambled egg, with cheese and vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 32130065,
+              "name": "Egg omelet or scrambled egg, NS as to fat type",
+              "netCarbsPer100g": 0.7
+            }
+          ]
+        }
+      ],
+      "combos": [
+        {
+          "foods": [
+            "Fresh fruit",
+            "Rice and oatmeal"
+          ]
+        },
+        {
+          "foods": [
+            "Fresh fruit",
+            "Salad vegetables"
+          ]
+        },
+        {
+          "foods": [
+            "Deli meats and sausages",
+            "White bread and rolls"
+          ]
+        },
+        {
+          "foods": [
+            "Salad vegetables",
+            "Raw tomatoes"
+          ]
+        },
+        {
+          "foods": [
+            "Fresh fruit",
+            "Cooked vegetables"
+          ]
+        }
+      ],
+      "mealPlans": [
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Deli meats and sausages",
+                "White bread and rolls",
+                "Salad vegetables"
+              ],
+              "combo": [
+                "Deli meats and sausages",
+                "White bread and rolls"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Fresh fruit",
+                "Rice and oatmeal",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Rice and oatmeal"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Wheat bread",
+                "Cooked vegetables",
+                "Citrus juice"
+              ],
+              "combo": null
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Fresh fruit",
+                "Salad vegetables",
+                "Rice and oatmeal"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Salad vegetables"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Deli meats and sausages",
+                "White bread and rolls",
+                "Wheat bread"
+              ],
+              "combo": [
+                "Deli meats and sausages",
+                "White bread and rolls"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Milk",
+                "Citrus juice",
+                "Cooked vegetables"
+              ],
+              "combo": null
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Fresh fruit",
+                "Salad vegetables",
+                "Cooked vegetables"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Salad vegetables"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Deli meats and sausages",
+                "White bread and rolls",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": [
+                "Deli meats and sausages",
+                "White bread and rolls"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Rice and oatmeal",
+                "Wheat bread",
+                "Milk"
+              ],
+              "combo": null
+            }
+          ]
+        }
+      ]
+    },
+    "normal": {
+      "sampleInput": {
+        "glucoseMgDl": 92,
+        "age": 30,
+        "gender": "female"
+      },
+      "foods": [
+        {
+          "id": "Fresh fruit",
+          "name": "Fresh fruit",
+          "netCarbsPer100g": 13.4,
+          "source": "model",
+          "variants": [
+            {
+              "code": 63107010,
+              "name": "Banana, raw",
+              "netCarbsPer100g": 20.2
+            },
+            {
+              "code": 63101000,
+              "name": "Apple, raw",
+              "netCarbsPer100g": 11.4
+            },
+            {
+              "code": 63105010,
+              "name": "Avocado, raw",
+              "netCarbsPer100g": 1.8
+            },
+            {
+              "code": 63141010,
+              "name": "Pineapple, raw",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 63149010,
+              "name": "Watermelon, raw",
+              "netCarbsPer100g": 7.2
+            },
+            {
+              "code": 63109010,
+              "name": "Cantaloupe, raw",
+              "netCarbsPer100g": 7.4
+            },
+            {
+              "code": 63129010,
+              "name": "Mango, raw",
+              "netCarbsPer100g": 13.4
+            },
+            {
+              "code": 63126500,
+              "name": "Kiwi fruit, raw",
+              "netCarbsPer100g": 11
+            },
+            {
+              "code": 63137010,
+              "name": "Pear, raw",
+              "netCarbsPer100g": 12.1
+            },
+            {
+              "code": 63115010,
+              "name": "Cherries, raw",
+              "netCarbsPer100g": 13.9
+            },
+            {
+              "code": 63135010,
+              "name": "Peach, raw",
+              "netCarbsPer100g": 8.6
+            },
+            {
+              "code": 63135140,
+              "name": "Peach, canned, in syrup",
+              "netCarbsPer100g": 12.4
+            },
+            {
+              "code": 63127010,
+              "name": "Honeydew melon, raw",
+              "netCarbsPer100g": 8.3
+            },
+            {
+              "code": 63143010,
+              "name": "Plum, raw",
+              "netCarbsPer100g": 10
+            }
+          ]
+        },
+        {
+          "id": "White bread and rolls",
+          "name": "White bread and rolls",
+          "netCarbsPer100g": 47.6,
+          "source": "model",
+          "variants": [
+            {
+              "code": 51101000,
+              "name": "Bread, white",
+              "netCarbsPer100g": 46.9
+            },
+            {
+              "code": 51185000,
+              "name": "Croutons",
+              "netCarbsPer100g": 58.5
+            },
+            {
+              "code": 51150000,
+              "name": "Roll, white, soft",
+              "netCarbsPer100g": 48.3
+            },
+            {
+              "code": 51180010,
+              "name": "Bagel",
+              "netCarbsPer100g": 50.8
+            },
+            {
+              "code": 51101010,
+              "name": "Bread, white, toasted",
+              "netCarbsPer100g": 51.5
+            },
+            {
+              "code": 51101050,
+              "name": "Bread, white, made from home recipe or purchased at a bakery",
+              "netCarbsPer100g": 48.4
+            },
+            {
+              "code": 51154100,
+              "name": "Roll, white, hamburger bun",
+              "netCarbsPer100g": 48.3
+            },
+            {
+              "code": 51107010,
+              "name": "Bread, French or Vienna",
+              "netCarbsPer100g": 49.7
+            },
+            {
+              "code": 51157000,
+              "name": "Roll, white, hoagie, submarine",
+              "netCarbsPer100g": 48.3
+            },
+            {
+              "code": 51121035,
+              "name": "Garlic bread, from frozen",
+              "netCarbsPer100g": 39.2
+            },
+            {
+              "code": 51109010,
+              "name": "Bread, Italian, Grecian, Armenian",
+              "netCarbsPer100g": 46
+            },
+            {
+              "code": 51186010,
+              "name": "Muffin, English",
+              "netCarbsPer100g": 40.7
+            },
+            {
+              "code": 51161250,
+              "name": "Pan Dulce, no topping",
+              "netCarbsPer100g": 54.1
+            }
+          ]
+        },
+        {
+          "id": "Salad vegetables",
+          "name": "Salad vegetables",
+          "netCarbsPer100g": 3.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75113000,
+              "name": "Lettuce, raw",
+              "netCarbsPer100g": 1.7
+            },
+            {
+              "code": 75111000,
+              "name": "Cucumber, raw",
+              "netCarbsPer100g": 3.1
+            },
+            {
+              "code": 75117020,
+              "name": "Onions, raw",
+              "netCarbsPer100g": 7.6
+            },
+            {
+              "code": 75114000,
+              "name": "Mixed salad greens, raw",
+              "netCarbsPer100g": 1.5
+            },
+            {
+              "code": 75103000,
+              "name": "Cabbage, green, raw",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75122000,
+              "name": "Pepper, raw, NFS",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75109000,
+              "name": "Celery, raw",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 75121000,
+              "name": "Pepper, hot chili, raw",
+              "netCarbsPer100g": 5.6
+            },
+            {
+              "code": 75140990,
+              "name": "Cabbage salad or coleslaw, from fast food / restaurant",
+              "netCarbsPer100g": 10.5
+            },
+            {
+              "code": 75109550,
+              "name": "Cilantro, raw",
+              "netCarbsPer100g": 1.6
+            },
+            {
+              "code": 75122100,
+              "name": "Pepper, sweet, green, raw",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 75105000,
+              "name": "Cabbage, red, raw",
+              "netCarbsPer100g": 5.4
+            },
+            {
+              "code": 75107000,
+              "name": "Cauliflower, raw",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75122200,
+              "name": "Pepper, sweet, red, raw",
+              "netCarbsPer100g": 3.9
+            },
+            {
+              "code": 75125000,
+              "name": "Radish, raw",
+              "netCarbsPer100g": 1.7
+            }
+          ]
+        },
+        {
+          "id": "Milk",
+          "name": "Milk",
+          "netCarbsPer100g": 4.8,
+          "source": "model",
+          "variants": [
+            {
+              "code": 11111000,
+              "name": "Milk, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11112110,
+              "name": "Milk, reduced fat (2%)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11112210,
+              "name": "Milk, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 11113000,
+              "name": "Milk, fat free (skim)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11100000,
+              "name": "Milk, NFS",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11114300,
+              "name": "Milk, lactose free, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 11114350,
+              "name": "Milk, lactose free, whole",
+              "netCarbsPer100g": 4.7
+            }
+          ]
+        },
+        {
+          "id": "Rice and oatmeal",
+          "name": "Rice and oatmeal",
+          "netCarbsPer100g": 20,
+          "source": "model",
+          "variants": [
+            {
+              "code": 56205008,
+              "name": "Rice, white, cooked, no added fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56205001,
+              "name": "Rice, white, cooked, NS as to fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56203056,
+              "name": "Oatmeal, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 9.7
+            },
+            {
+              "code": 56205002,
+              "name": "Rice, white, cooked, made with oil",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205000,
+              "name": "Rice, cooked, NFS",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56205018,
+              "name": "Rice, brown, cooked, no added fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56203155,
+              "name": "Oatmeal, instant, fruit flavored, no added fat",
+              "netCarbsPer100g": 18.2
+            },
+            {
+              "code": 56203066,
+              "name": "Oatmeal, regular or quick, made with milk, no added fat",
+              "netCarbsPer100g": 14.6
+            },
+            {
+              "code": 56205011,
+              "name": "Rice, brown, cooked, NS as to fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56203130,
+              "name": "Oatmeal, instant, maple flavored, no added fat",
+              "netCarbsPer100g": 18.3
+            },
+            {
+              "code": 56205006,
+              "name": "Rice, white, cooked, made with margarine",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205004,
+              "name": "Rice, white, cooked, made with butter",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56201052,
+              "name": "Grits, regular or quick, made with water, fat added",
+              "netCarbsPer100g": 11.5
+            },
+            {
+              "code": 56201051,
+              "name": "Grits, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 56203610,
+              "name": "Oatmeal, multigrain, no added fat",
+              "netCarbsPer100g": 10.2
+            }
+          ]
+        },
+        {
+          "id": "Cooked vegetables",
+          "name": "Cooked vegetables",
+          "netCarbsPer100g": 6.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75221021,
+              "name": "Onions, cooked, fat added",
+              "netCarbsPer100g": 8.7
+            },
+            {
+              "code": 75205005,
+              "name": "Green beans, cooked, from restaurant",
+              "netCarbsPer100g": 4.2
+            },
+            {
+              "code": 75226020,
+              "name": "Peppers, green, cooked",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75216120,
+              "name": "Corn, NS as to form, cooked",
+              "netCarbsPer100g": 12
+            },
+            {
+              "code": 75233021,
+              "name": "Summer squash, yellow or green, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 2.8
+            },
+            {
+              "code": 75202021,
+              "name": "Asparagus, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 1.9
+            },
+            {
+              "code": 75215990,
+              "name": "Corn, cooked, from restaurant",
+              "netCarbsPer100g": 15.9
+            },
+            {
+              "code": 75217020,
+              "name": "Eggplant, cooked, fat added",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75211032,
+              "name": "Cabbage, green, cooked with butter or margarine",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75205023,
+              "name": "Green beans, canned, cooked, no added fat",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 75211020,
+              "name": "Cabbage, green, cooked, no added fat",
+              "netCarbsPer100g": 3.4
+            },
+            {
+              "code": 75209021,
+              "name": "Brussels sprouts, fresh, cooked, fat added",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 75214021,
+              "name": "Cauliflower, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75205021,
+              "name": "Green beans, fresh, cooked, no added fat",
+              "netCarbsPer100g": 4.4
+            },
+            {
+              "code": 75226111,
+              "name": "Hot peppers, cooked",
+              "netCarbsPer100g": 5.5
+            }
+          ]
+        },
+        {
+          "id": "Deli meats and sausages",
+          "name": "Deli meats and sausages",
+          "netCarbsPer100g": 2.1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 25230210,
+              "name": "Ham, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 0.3
+            },
+            {
+              "code": 25230780,
+              "name": "Turkey, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 25221405,
+              "name": "Pork sausage",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 25220410,
+              "name": "Bologna, NFS",
+              "netCarbsPer100g": 6.3
+            },
+            {
+              "code": 25221350,
+              "name": "Italian sausage",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 25221310,
+              "name": "Polish sausage",
+              "netCarbsPer100g": 5
+            },
+            {
+              "code": 25231110,
+              "name": "Beef, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 0.6
+            },
+            {
+              "code": 25220350,
+              "name": "Bratwurst",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 25221400,
+              "name": "Sausage, NFS",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 25230320,
+              "name": "Chicken, prepackaged or deli, luncheon meat",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 25221830,
+              "name": "Turkey or chicken sausage",
+              "netCarbsPer100g": 1.1
+            }
+          ]
+        },
+        {
+          "id": "Wheat bread",
+          "name": "Wheat bread",
+          "netCarbsPer100g": 41.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 51301010,
+              "name": "Bread, wheat or cracked wheat",
+              "netCarbsPer100g": 43.6
+            },
+            {
+              "code": 51300110,
+              "name": "Bread, whole wheat",
+              "netCarbsPer100g": 37.1
+            },
+            {
+              "code": 51301020,
+              "name": "Bread, wheat or cracked wheat, toasted",
+              "netCarbsPer100g": 47.9
+            },
+            {
+              "code": 51300175,
+              "name": "Bread, chappatti or roti, wheat",
+              "netCarbsPer100g": 36.4
+            },
+            {
+              "code": 51300120,
+              "name": "Bread, whole wheat, toasted",
+              "netCarbsPer100g": 40.7
+            },
+            {
+              "code": 51320010,
+              "name": "Roll, wheat or cracked wheat",
+              "netCarbsPer100g": 42.2
+            },
+            {
+              "code": 51300050,
+              "name": "Bread, whole grain white",
+              "netCarbsPer100g": 34.8
+            },
+            {
+              "code": 51300185,
+              "name": "Bread, paratha, wheat",
+              "netCarbsPer100g": 35.8
+            },
+            {
+              "code": 51301040,
+              "name": "Bread, wheat or cracked wheat, made from home recipe or purchased at bakery",
+              "netCarbsPer100g": 45.8
+            },
+            {
+              "code": 51301750,
+              "name": "Bagel, whole wheat",
+              "netCarbsPer100g": 44.8
+            },
+            {
+              "code": 51301620,
+              "name": "Bread, pita, wheat or cracked wheat",
+              "netCarbsPer100g": 49.8
+            },
+            {
+              "code": 51300140,
+              "name": "Bread, whole wheat, made from home recipe or purchased at bakery",
+              "netCarbsPer100g": 40.6
+            },
+            {
+              "code": 51301800,
+              "name": "Bagel, wheat, with raisins",
+              "netCarbsPer100g": 47.8
+            },
+            {
+              "code": 51303030,
+              "name": "Muffin, English, whole wheat",
+              "netCarbsPer100g": 40.2
+            },
+            {
+              "code": 51301600,
+              "name": "Bread, pita, whole wheat",
+              "netCarbsPer100g": 49.8
+            }
+          ]
+        },
+        {
+          "id": "Scrambled eggs and omelets",
+          "name": "Scrambled eggs and omelets",
+          "netCarbsPer100g": 1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 32130010,
+              "name": "Egg omelet or scrambled egg, made with oil",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130080,
+              "name": "Egg omelet or scrambled egg, from fast food / restaurant",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130070,
+              "name": "Egg omelet or scrambled egg, no added fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130110,
+              "name": "Egg omelet or scrambled egg, with cheese, made with oil",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130020,
+              "name": "Egg omelet or scrambled egg, made with butter",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130000,
+              "name": "Egg omelet or scrambled egg, made with margarine",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130400,
+              "name": "Egg omelet or scrambled egg, with tomatoes, fat added",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130120,
+              "name": "Egg omelet or scrambled egg, with cheese, made with butter",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32129990,
+              "name": "Egg omelet or scrambled egg, NS as to fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130060,
+              "name": "Egg omelet or scrambled egg, made with cooking spray",
+              "netCarbsPer100g": 0.9
+            },
+            {
+              "code": 32130490,
+              "name": "Egg omelet or scrambled egg, with vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1
+            },
+            {
+              "code": 32130210,
+              "name": "Egg omelet or scrambled egg, with meat, made with oil",
+              "netCarbsPer100g": 0.8
+            },
+            {
+              "code": 32130290,
+              "name": "Egg omelet or scrambled egg, with cheese and meat, NS as to fat",
+              "netCarbsPer100g": 1.2
+            },
+            {
+              "code": 32130690,
+              "name": "Egg omelet or scrambled egg, with cheese and vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 32130065,
+              "name": "Egg omelet or scrambled egg, NS as to fat type",
+              "netCarbsPer100g": 0.7
+            }
+          ]
+        },
+        {
+          "id": "Citrus juice",
+          "name": "Citrus juice",
+          "netCarbsPer100g": 10.9,
+          "source": "model",
+          "variants": [
+            {
+              "code": 61210220,
+              "name": "Orange juice, 100%, canned, bottled or in a carton",
+              "netCarbsPer100g": 11.2
+            },
+            {
+              "code": 61210250,
+              "name": "Orange juice, 100%, with calcium added, canned, bottled or in a carton",
+              "netCarbsPer100g": 11
+            },
+            {
+              "code": 61204000,
+              "name": "Lemon juice, 100%, NS as to form",
+              "netCarbsPer100g": 6.8
+            },
+            {
+              "code": 61204010,
+              "name": "Lemon juice, 100%, freshly squeezed",
+              "netCarbsPer100g": 6.6
+            },
+            {
+              "code": 61207010,
+              "name": "Lime juice, 100%, freshly squeezed",
+              "netCarbsPer100g": 8
+            },
+            {
+              "code": 61207000,
+              "name": "Lime juice, 100%, NS as to form",
+              "netCarbsPer100g": 8.1
+            },
+            {
+              "code": 61210000,
+              "name": "Orange juice, 100%, NFS",
+              "netCarbsPer100g": 11.2
+            },
+            {
+              "code": 61210010,
+              "name": "Orange juice, 100%,  freshly squeezed",
+              "netCarbsPer100g": 10.2
+            },
+            {
+              "code": 61213800,
+              "name": "Fruit juice blend, citrus, 100% juice",
+              "netCarbsPer100g": 12
+            }
+          ]
+        }
+      ],
+      "combos": [
+        {
+          "foods": [
+            "Fresh fruit",
+            "Rice and oatmeal"
+          ]
+        },
+        {
+          "foods": [
+            "Fresh fruit",
+            "Salad vegetables"
+          ]
+        },
+        {
+          "foods": [
+            "Deli meats and sausages",
+            "White bread and rolls"
+          ]
+        },
+        {
+          "foods": [
+            "Salad vegetables",
+            "Raw tomatoes"
+          ]
+        },
+        {
+          "foods": [
+            "Fresh fruit",
+            "Cooked vegetables"
+          ]
+        }
+      ],
+      "mealPlans": [
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Salad vegetables",
+                "Raw tomatoes",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": [
+                "Salad vegetables",
+                "Raw tomatoes"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Deli meats and sausages",
+                "White bread and rolls",
+                "Wheat bread"
+              ],
+              "combo": [
+                "Deli meats and sausages",
+                "White bread and rolls"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Fresh fruit",
+                "Cooked vegetables",
+                "Milk"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Cooked vegetables"
+              ]
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Fresh fruit",
+                "Rice and oatmeal",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Rice and oatmeal"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Deli meats and sausages",
+                "White bread and rolls",
+                "Citrus juice"
+              ],
+              "combo": [
+                "Deli meats and sausages",
+                "White bread and rolls"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Salad vegetables",
+                "Raw tomatoes",
+                "Cooked vegetables"
+              ],
+              "combo": [
+                "Salad vegetables",
+                "Raw tomatoes"
+              ]
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Salad vegetables",
+                "Raw tomatoes",
+                "Rice and oatmeal"
+              ],
+              "combo": [
+                "Salad vegetables",
+                "Raw tomatoes"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Fresh fruit",
+                "Cooked vegetables",
+                "Milk"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Cooked vegetables"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Deli meats and sausages",
+                "White bread and rolls",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": [
+                "Deli meats and sausages",
+                "White bread and rolls"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "elevated": {
+      "sampleInput": {
+        "glucoseMgDl": 110,
+        "age": 45,
+        "gender": "female"
+      },
+      "foods": [
+        {
+          "id": "Fresh fruit",
+          "name": "Fresh fruit",
+          "netCarbsPer100g": 13.4,
+          "source": "model",
+          "variants": [
+            {
+              "code": 63101000,
+              "name": "Apple, raw",
+              "netCarbsPer100g": 11.4
+            },
+            {
+              "code": 63105010,
+              "name": "Avocado, raw",
+              "netCarbsPer100g": 1.8
+            },
+            {
+              "code": 63149010,
+              "name": "Watermelon, raw",
+              "netCarbsPer100g": 7.2
+            },
+            {
+              "code": 63109010,
+              "name": "Cantaloupe, raw",
+              "netCarbsPer100g": 7.4
+            },
+            {
+              "code": 63141010,
+              "name": "Pineapple, raw",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 63135010,
+              "name": "Peach, raw",
+              "netCarbsPer100g": 8.6
+            },
+            {
+              "code": 63137010,
+              "name": "Pear, raw",
+              "netCarbsPer100g": 12.1
+            },
+            {
+              "code": 63143010,
+              "name": "Plum, raw",
+              "netCarbsPer100g": 10
+            },
+            {
+              "code": 63127010,
+              "name": "Honeydew melon, raw",
+              "netCarbsPer100g": 8.3
+            },
+            {
+              "code": 63126500,
+              "name": "Kiwi fruit, raw",
+              "netCarbsPer100g": 11
+            }
+          ]
+        },
+        {
+          "id": "Milk",
+          "name": "Milk",
+          "netCarbsPer100g": 4.8,
+          "source": "model",
+          "variants": [
+            {
+              "code": 11112110,
+              "name": "Milk, reduced fat (2%)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11111000,
+              "name": "Milk, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11112210,
+              "name": "Milk, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 11113000,
+              "name": "Milk, fat free (skim)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11100000,
+              "name": "Milk, NFS",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11114350,
+              "name": "Milk, lactose free, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11114300,
+              "name": "Milk, lactose free, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            }
+          ]
+        },
+        {
+          "id": "Salad vegetables",
+          "name": "Salad vegetables",
+          "netCarbsPer100g": 3.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75113000,
+              "name": "Lettuce, raw",
+              "netCarbsPer100g": 1.7
+            },
+            {
+              "code": 75111000,
+              "name": "Cucumber, raw",
+              "netCarbsPer100g": 3.1
+            },
+            {
+              "code": 75117020,
+              "name": "Onions, raw",
+              "netCarbsPer100g": 7.6
+            },
+            {
+              "code": 75114000,
+              "name": "Mixed salad greens, raw",
+              "netCarbsPer100g": 1.5
+            },
+            {
+              "code": 75109000,
+              "name": "Celery, raw",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 75103000,
+              "name": "Cabbage, green, raw",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75140990,
+              "name": "Cabbage salad or coleslaw, from fast food / restaurant",
+              "netCarbsPer100g": 10.5
+            },
+            {
+              "code": 75109550,
+              "name": "Cilantro, raw",
+              "netCarbsPer100g": 1.6
+            },
+            {
+              "code": 75122000,
+              "name": "Pepper, raw, NFS",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75125000,
+              "name": "Radish, raw",
+              "netCarbsPer100g": 1.7
+            },
+            {
+              "code": 75122200,
+              "name": "Pepper, sweet, red, raw",
+              "netCarbsPer100g": 3.9
+            },
+            {
+              "code": 75122100,
+              "name": "Pepper, sweet, green, raw",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 75121000,
+              "name": "Pepper, hot chili, raw",
+              "netCarbsPer100g": 5.6
+            },
+            {
+              "code": 75107000,
+              "name": "Cauliflower, raw",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75105000,
+              "name": "Cabbage, red, raw",
+              "netCarbsPer100g": 5.4
+            }
+          ]
+        },
+        {
+          "id": "Cooked vegetables",
+          "name": "Cooked vegetables",
+          "netCarbsPer100g": 6.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75221021,
+              "name": "Onions, cooked, fat added",
+              "netCarbsPer100g": 8.7
+            },
+            {
+              "code": 75205005,
+              "name": "Green beans, cooked, from restaurant",
+              "netCarbsPer100g": 4.2
+            },
+            {
+              "code": 75215990,
+              "name": "Corn, cooked, from restaurant",
+              "netCarbsPer100g": 15.9
+            },
+            {
+              "code": 75216120,
+              "name": "Corn, NS as to form, cooked",
+              "netCarbsPer100g": 12
+            },
+            {
+              "code": 75226020,
+              "name": "Peppers, green, cooked",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75226111,
+              "name": "Hot peppers, cooked",
+              "netCarbsPer100g": 5.5
+            },
+            {
+              "code": 75209021,
+              "name": "Brussels sprouts, fresh, cooked, fat added",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 75233021,
+              "name": "Summer squash, yellow or green, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 2.8
+            },
+            {
+              "code": 75205021,
+              "name": "Green beans, fresh, cooked, no added fat",
+              "netCarbsPer100g": 4.4
+            },
+            {
+              "code": 75217020,
+              "name": "Eggplant, cooked, fat added",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75214021,
+              "name": "Cauliflower, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75205023,
+              "name": "Green beans, canned, cooked, no added fat",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 75211020,
+              "name": "Cabbage, green, cooked, no added fat",
+              "netCarbsPer100g": 3.4
+            },
+            {
+              "code": 75202021,
+              "name": "Asparagus, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 1.9
+            },
+            {
+              "code": 75211032,
+              "name": "Cabbage, green, cooked with butter or margarine",
+              "netCarbsPer100g": 3.3
+            }
+          ]
+        },
+        {
+          "id": "Rice and oatmeal",
+          "name": "Rice and oatmeal",
+          "netCarbsPer100g": 20,
+          "source": "model",
+          "variants": [
+            {
+              "code": 56205008,
+              "name": "Rice, white, cooked, no added fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56203056,
+              "name": "Oatmeal, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 9.7
+            },
+            {
+              "code": 56205001,
+              "name": "Rice, white, cooked, NS as to fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56205002,
+              "name": "Rice, white, cooked, made with oil",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205018,
+              "name": "Rice, brown, cooked, no added fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56205000,
+              "name": "Rice, cooked, NFS",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56201052,
+              "name": "Grits, regular or quick, made with water, fat added",
+              "netCarbsPer100g": 11.5
+            },
+            {
+              "code": 56203066,
+              "name": "Oatmeal, regular or quick, made with milk, no added fat",
+              "netCarbsPer100g": 14.6
+            },
+            {
+              "code": 56203610,
+              "name": "Oatmeal, multigrain, no added fat",
+              "netCarbsPer100g": 10.2
+            },
+            {
+              "code": 56203130,
+              "name": "Oatmeal, instant, maple flavored, no added fat",
+              "netCarbsPer100g": 18.3
+            },
+            {
+              "code": 56205011,
+              "name": "Rice, brown, cooked, NS as to fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56201051,
+              "name": "Grits, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 56205004,
+              "name": "Rice, white, cooked, made with butter",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56203155,
+              "name": "Oatmeal, instant, fruit flavored, no added fat",
+              "netCarbsPer100g": 18.2
+            },
+            {
+              "code": 56205006,
+              "name": "Rice, white, cooked, made with margarine",
+              "netCarbsPer100g": 26.8
+            }
+          ]
+        },
+        {
+          "id": "Eggs boiled or fried",
+          "name": "Eggs boiled or fried",
+          "netCarbsPer100g": 0.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 31103010,
+              "name": "Egg, whole, boiled or poached",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105030,
+              "name": "Egg, whole, fried with oil",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105090,
+              "name": "Egg, whole, fried, from fast food / restaurant",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105010,
+              "name": "Egg, whole, fried no added fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105020,
+              "name": "Egg, whole, fried with margarine",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31102000,
+              "name": "Egg, whole, cooked, NS as to cooking method",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31108100,
+              "name": "Egg, white, cooked, NS as to fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105080,
+              "name": "Egg, whole, fried with cooking spray",
+              "netCarbsPer100g": 0.9
+            },
+            {
+              "code": 31105005,
+              "name": "Egg, whole, fried, NS as to fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105040,
+              "name": "Egg, whole, fried with butter",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105060,
+              "name": "Egg, whole, fried with animal fat or meat drippings",
+              "netCarbsPer100g": 0.7
+            }
+          ]
+        },
+        {
+          "id": "Wheat bread",
+          "name": "Wheat bread",
+          "netCarbsPer100g": 41.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 51301010,
+              "name": "Bread, wheat or cracked wheat",
+              "netCarbsPer100g": 43.6
+            },
+            {
+              "code": 51300110,
+              "name": "Bread, whole wheat",
+              "netCarbsPer100g": 37.1
+            },
+            {
+              "code": 51300175,
+              "name": "Bread, chappatti or roti, wheat",
+              "netCarbsPer100g": 36.4
+            },
+            {
+              "code": 51300120,
+              "name": "Bread, whole wheat, toasted",
+              "netCarbsPer100g": 40.7
+            },
+            {
+              "code": 51300050,
+              "name": "Bread, whole grain white",
+              "netCarbsPer100g": 34.8
+            },
+            {
+              "code": 51320010,
+              "name": "Roll, wheat or cracked wheat",
+              "netCarbsPer100g": 42.2
+            },
+            {
+              "code": 51303030,
+              "name": "Muffin, English, whole wheat",
+              "netCarbsPer100g": 40.2
+            },
+            {
+              "code": 51300140,
+              "name": "Bread, whole wheat, made from home recipe or purchased at bakery",
+              "netCarbsPer100g": 40.6
+            },
+            {
+              "code": 51301750,
+              "name": "Bagel, whole wheat",
+              "netCarbsPer100g": 44.8
+            },
+            {
+              "code": 51300185,
+              "name": "Bread, paratha, wheat",
+              "netCarbsPer100g": 35.8
+            }
+          ]
+        },
+        {
+          "id": "Raw tomatoes",
+          "name": "Raw tomatoes",
+          "netCarbsPer100g": 2.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 74101000,
+              "name": "Tomatoes, raw",
+              "netCarbsPer100g": 2.7
+            }
+          ]
+        },
+        {
+          "id": "Scrambled eggs and omelets",
+          "name": "Scrambled eggs and omelets",
+          "netCarbsPer100g": 1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 32130010,
+              "name": "Egg omelet or scrambled egg, made with oil",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130080,
+              "name": "Egg omelet or scrambled egg, from fast food / restaurant",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130020,
+              "name": "Egg omelet or scrambled egg, made with butter",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130400,
+              "name": "Egg omelet or scrambled egg, with tomatoes, fat added",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130070,
+              "name": "Egg omelet or scrambled egg, no added fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130060,
+              "name": "Egg omelet or scrambled egg, made with cooking spray",
+              "netCarbsPer100g": 0.9
+            },
+            {
+              "code": 32130210,
+              "name": "Egg omelet or scrambled egg, with meat, made with oil",
+              "netCarbsPer100g": 0.8
+            },
+            {
+              "code": 32130065,
+              "name": "Egg omelet or scrambled egg, NS as to fat type",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130290,
+              "name": "Egg omelet or scrambled egg, with cheese and meat, NS as to fat",
+              "netCarbsPer100g": 1.2
+            },
+            {
+              "code": 32130690,
+              "name": "Egg omelet or scrambled egg, with cheese and vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 32130490,
+              "name": "Egg omelet or scrambled egg, with vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1
+            },
+            {
+              "code": 32130000,
+              "name": "Egg omelet or scrambled egg, made with margarine",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130110,
+              "name": "Egg omelet or scrambled egg, with cheese, made with oil",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130120,
+              "name": "Egg omelet or scrambled egg, with cheese, made with butter",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32129990,
+              "name": "Egg omelet or scrambled egg, NS as to fat",
+              "netCarbsPer100g": 0.7
+            }
+          ]
+        },
+        {
+          "id": "Nuts",
+          "name": "Nuts",
+          "netCarbsPer100g": 14.1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 42116000,
+              "name": "Walnuts, excluding honey roasted",
+              "netCarbsPer100g": 7
+            },
+            {
+              "code": 42101130,
+              "name": "Almonds, unsalted",
+              "netCarbsPer100g": 9.8
+            },
+            {
+              "code": 42110160,
+              "name": "Mixed nuts, without peanuts, unsalted",
+              "netCarbsPer100g": 15.1
+            },
+            {
+              "code": 42111210,
+              "name": "Peanuts, dry roasted, unsalted",
+              "netCarbsPer100g": 12.9
+            },
+            {
+              "code": 42114140,
+              "name": "Pistachio nuts, salted",
+              "netCarbsPer100g": 17.3
+            },
+            {
+              "code": 42101110,
+              "name": "Almonds, salted",
+              "netCarbsPer100g": 9.7
+            },
+            {
+              "code": 42111100,
+              "name": "Peanuts, roasted, salted",
+              "netCarbsPer100g": 5.9
+            },
+            {
+              "code": 42111200,
+              "name": "Peanuts, dry roasted, salted",
+              "netCarbsPer100g": 12.8
+            },
+            {
+              "code": 42100050,
+              "name": "Nuts, NFS",
+              "netCarbsPer100g": 13.6
+            },
+            {
+              "code": 42110100,
+              "name": "Mixed nuts, with peanuts, salted",
+              "netCarbsPer100g": 13.5
+            },
+            {
+              "code": 42101000,
+              "name": "Almonds, unroasted",
+              "netCarbsPer100g": 9.1
+            },
+            {
+              "code": 42104100,
+              "name": "Cashews, salted",
+              "netCarbsPer100g": 28.5
+            },
+            {
+              "code": 42100100,
+              "name": "Almonds, NFS",
+              "netCarbsPer100g": 10.1
+            },
+            {
+              "code": 42104110,
+              "name": "Cashews, unsalted",
+              "netCarbsPer100g": 28.8
+            },
+            {
+              "code": 42110150,
+              "name": "Mixed nuts, without peanuts, salted",
+              "netCarbsPer100g": 14.9
+            }
+          ]
+        }
+      ],
+      "combos": [
+        {
+          "foods": [
+            "Milk",
+            "Fresh fruit"
+          ]
+        },
+        {
+          "foods": [
+            "Fresh fruit",
+            "Salad vegetables"
+          ]
+        },
+        {
+          "foods": [
+            "Fresh fruit",
+            "Cooked vegetables"
+          ]
+        },
+        {
+          "foods": [
+            "Salad vegetables",
+            "Raw tomatoes"
+          ]
+        },
+        {
+          "foods": [
+            "Rice and oatmeal",
+            "Cooked vegetables"
+          ]
+        }
+      ],
+      "mealPlans": [
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Fresh fruit",
+                "Salad vegetables",
+                "Rice and oatmeal"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Salad vegetables"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Cooked vegetables",
+                "Eggs boiled or fried",
+                "Wheat bread"
+              ],
+              "combo": null
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Milk",
+                "Nuts",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": null
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Fresh fruit",
+                "Salad vegetables",
+                "Nuts"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Salad vegetables"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Rice and oatmeal",
+                "Cooked vegetables",
+                "Milk"
+              ],
+              "combo": [
+                "Rice and oatmeal",
+                "Cooked vegetables"
+              ]
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Raw tomatoes",
+                "Wheat bread",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": null
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Fresh fruit",
+                "Cooked vegetables",
+                "Raw tomatoes"
+              ],
+              "combo": [
+                "Fresh fruit",
+                "Cooked vegetables"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Milk",
+                "Wheat bread",
+                "Salad vegetables"
+              ],
+              "combo": null
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Nuts",
+                "Scrambled eggs and omelets",
+                "Eggs boiled or fried"
+              ],
+              "combo": null
+            }
+          ]
+        }
+      ]
+    },
+    "high": {
+      "sampleInput": {
+        "glucoseMgDl": 152,
+        "age": 52,
+        "gender": "female"
+      },
+      "foods": [
+        {
+          "id": "Fresh fruit",
+          "name": "Fresh fruit",
+          "netCarbsPer100g": 13.4,
+          "source": "model",
+          "variants": [
+            {
+              "code": 63101000,
+              "name": "Apple, raw",
+              "netCarbsPer100g": 11.4
+            },
+            {
+              "code": 63105010,
+              "name": "Avocado, raw",
+              "netCarbsPer100g": 1.8
+            },
+            {
+              "code": 63149010,
+              "name": "Watermelon, raw",
+              "netCarbsPer100g": 7.2
+            },
+            {
+              "code": 63109010,
+              "name": "Cantaloupe, raw",
+              "netCarbsPer100g": 7.4
+            },
+            {
+              "code": 63141010,
+              "name": "Pineapple, raw",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 63137010,
+              "name": "Pear, raw",
+              "netCarbsPer100g": 12.1
+            },
+            {
+              "code": 63135010,
+              "name": "Peach, raw",
+              "netCarbsPer100g": 8.6
+            },
+            {
+              "code": 63143010,
+              "name": "Plum, raw",
+              "netCarbsPer100g": 10
+            },
+            {
+              "code": 63126500,
+              "name": "Kiwi fruit, raw",
+              "netCarbsPer100g": 11
+            },
+            {
+              "code": 63127010,
+              "name": "Honeydew melon, raw",
+              "netCarbsPer100g": 8.3
+            }
+          ]
+        },
+        {
+          "id": "Salad vegetables",
+          "name": "Salad vegetables",
+          "netCarbsPer100g": 3.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75113000,
+              "name": "Lettuce, raw",
+              "netCarbsPer100g": 1.7
+            },
+            {
+              "code": 75111000,
+              "name": "Cucumber, raw",
+              "netCarbsPer100g": 3.1
+            },
+            {
+              "code": 75117020,
+              "name": "Onions, raw",
+              "netCarbsPer100g": 7.6
+            },
+            {
+              "code": 75114000,
+              "name": "Mixed salad greens, raw",
+              "netCarbsPer100g": 1.5
+            },
+            {
+              "code": 75109550,
+              "name": "Cilantro, raw",
+              "netCarbsPer100g": 1.6
+            },
+            {
+              "code": 75109000,
+              "name": "Celery, raw",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 75125000,
+              "name": "Radish, raw",
+              "netCarbsPer100g": 1.7
+            },
+            {
+              "code": 75122000,
+              "name": "Pepper, raw, NFS",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75140990,
+              "name": "Cabbage salad or coleslaw, from fast food / restaurant",
+              "netCarbsPer100g": 10.5
+            },
+            {
+              "code": 75103000,
+              "name": "Cabbage, green, raw",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75107000,
+              "name": "Cauliflower, raw",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75122100,
+              "name": "Pepper, sweet, green, raw",
+              "netCarbsPer100g": 2.9
+            },
+            {
+              "code": 75105000,
+              "name": "Cabbage, red, raw",
+              "netCarbsPer100g": 5.4
+            },
+            {
+              "code": 75122200,
+              "name": "Pepper, sweet, red, raw",
+              "netCarbsPer100g": 3.9
+            },
+            {
+              "code": 75121000,
+              "name": "Pepper, hot chili, raw",
+              "netCarbsPer100g": 5.6
+            }
+          ]
+        },
+        {
+          "id": "Cooked vegetables",
+          "name": "Cooked vegetables",
+          "netCarbsPer100g": 6.2,
+          "source": "model",
+          "variants": [
+            {
+              "code": 75221021,
+              "name": "Onions, cooked, fat added",
+              "netCarbsPer100g": 8.7
+            },
+            {
+              "code": 75205005,
+              "name": "Green beans, cooked, from restaurant",
+              "netCarbsPer100g": 4.2
+            },
+            {
+              "code": 75216120,
+              "name": "Corn, NS as to form, cooked",
+              "netCarbsPer100g": 12
+            },
+            {
+              "code": 75215990,
+              "name": "Corn, cooked, from restaurant",
+              "netCarbsPer100g": 15.9
+            },
+            {
+              "code": 75226020,
+              "name": "Peppers, green, cooked",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75233021,
+              "name": "Summer squash, yellow or green, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 2.8
+            },
+            {
+              "code": 75205023,
+              "name": "Green beans, canned, cooked, no added fat",
+              "netCarbsPer100g": 2.2
+            },
+            {
+              "code": 75209021,
+              "name": "Brussels sprouts, fresh, cooked, fat added",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 75211020,
+              "name": "Cabbage, green, cooked, no added fat",
+              "netCarbsPer100g": 3.4
+            },
+            {
+              "code": 75205021,
+              "name": "Green beans, fresh, cooked, no added fat",
+              "netCarbsPer100g": 4.4
+            },
+            {
+              "code": 75226111,
+              "name": "Hot peppers, cooked",
+              "netCarbsPer100g": 5.5
+            },
+            {
+              "code": 75217020,
+              "name": "Eggplant, cooked, fat added",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75214021,
+              "name": "Cauliflower, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 3
+            },
+            {
+              "code": 75211032,
+              "name": "Cabbage, green, cooked with butter or margarine",
+              "netCarbsPer100g": 3.3
+            },
+            {
+              "code": 75202021,
+              "name": "Asparagus, fresh, cooked, fat added, NS as to fat type",
+              "netCarbsPer100g": 1.9
+            }
+          ]
+        },
+        {
+          "id": "Milk",
+          "name": "Milk",
+          "netCarbsPer100g": 4.8,
+          "source": "model",
+          "variants": [
+            {
+              "code": 11111000,
+              "name": "Milk, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11112110,
+              "name": "Milk, reduced fat (2%)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11112210,
+              "name": "Milk, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            },
+            {
+              "code": 11113000,
+              "name": "Milk, fat free (skim)",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11100000,
+              "name": "Milk, NFS",
+              "netCarbsPer100g": 4.9
+            },
+            {
+              "code": 11114350,
+              "name": "Milk, lactose free, whole",
+              "netCarbsPer100g": 4.7
+            },
+            {
+              "code": 11114300,
+              "name": "Milk, lactose free, low fat (1%)",
+              "netCarbsPer100g": 5.2
+            }
+          ]
+        },
+        {
+          "id": "Rice and oatmeal",
+          "name": "Rice and oatmeal",
+          "netCarbsPer100g": 20,
+          "source": "model",
+          "variants": [
+            {
+              "code": 56205008,
+              "name": "Rice, white, cooked, no added fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56203056,
+              "name": "Oatmeal, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 9.7
+            },
+            {
+              "code": 56205002,
+              "name": "Rice, white, cooked, made with oil",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205001,
+              "name": "Rice, white, cooked, NS as to fat",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56201052,
+              "name": "Grits, regular or quick, made with water, fat added",
+              "netCarbsPer100g": 11.5
+            },
+            {
+              "code": 56205000,
+              "name": "Rice, cooked, NFS",
+              "netCarbsPer100g": 27.6
+            },
+            {
+              "code": 56205004,
+              "name": "Rice, white, cooked, made with butter",
+              "netCarbsPer100g": 26.8
+            },
+            {
+              "code": 56205018,
+              "name": "Rice, brown, cooked, no added fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56203610,
+              "name": "Oatmeal, multigrain, no added fat",
+              "netCarbsPer100g": 10.2
+            },
+            {
+              "code": 56203130,
+              "name": "Oatmeal, instant, maple flavored, no added fat",
+              "netCarbsPer100g": 18.3
+            },
+            {
+              "code": 56203066,
+              "name": "Oatmeal, regular or quick, made with milk, no added fat",
+              "netCarbsPer100g": 14.6
+            },
+            {
+              "code": 56203155,
+              "name": "Oatmeal, instant, fruit flavored, no added fat",
+              "netCarbsPer100g": 18.2
+            },
+            {
+              "code": 56205011,
+              "name": "Rice, brown, cooked, NS as to fat",
+              "netCarbsPer100g": 23.9
+            },
+            {
+              "code": 56201051,
+              "name": "Grits, regular or quick, made with water, no added fat",
+              "netCarbsPer100g": 11.7
+            },
+            {
+              "code": 56205006,
+              "name": "Rice, white, cooked, made with margarine",
+              "netCarbsPer100g": 26.8
+            }
+          ]
+        },
+        {
+          "id": "Eggs boiled or fried",
+          "name": "Eggs boiled or fried",
+          "netCarbsPer100g": 0.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 31103010,
+              "name": "Egg, whole, boiled or poached",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105030,
+              "name": "Egg, whole, fried with oil",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105090,
+              "name": "Egg, whole, fried, from fast food / restaurant",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105040,
+              "name": "Egg, whole, fried with butter",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105020,
+              "name": "Egg, whole, fried with margarine",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105010,
+              "name": "Egg, whole, fried no added fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31102000,
+              "name": "Egg, whole, cooked, NS as to cooking method",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105060,
+              "name": "Egg, whole, fried with animal fat or meat drippings",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105080,
+              "name": "Egg, whole, fried with cooking spray",
+              "netCarbsPer100g": 0.9
+            },
+            {
+              "code": 31108100,
+              "name": "Egg, white, cooked, NS as to fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 31105005,
+              "name": "Egg, whole, fried, NS as to fat",
+              "netCarbsPer100g": 0.7
+            }
+          ]
+        },
+        {
+          "id": "Raw tomatoes",
+          "name": "Raw tomatoes",
+          "netCarbsPer100g": 2.7,
+          "source": "model",
+          "variants": [
+            {
+              "code": 74101000,
+              "name": "Tomatoes, raw",
+              "netCarbsPer100g": 2.7
+            }
+          ]
+        },
+        {
+          "id": "Nuts",
+          "name": "Nuts",
+          "netCarbsPer100g": 14.1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 42116000,
+              "name": "Walnuts, excluding honey roasted",
+              "netCarbsPer100g": 7
+            },
+            {
+              "code": 42101130,
+              "name": "Almonds, unsalted",
+              "netCarbsPer100g": 9.8
+            },
+            {
+              "code": 42110100,
+              "name": "Mixed nuts, with peanuts, salted",
+              "netCarbsPer100g": 13.5
+            },
+            {
+              "code": 42101110,
+              "name": "Almonds, salted",
+              "netCarbsPer100g": 9.7
+            },
+            {
+              "code": 42114140,
+              "name": "Pistachio nuts, salted",
+              "netCarbsPer100g": 17.3
+            },
+            {
+              "code": 42111210,
+              "name": "Peanuts, dry roasted, unsalted",
+              "netCarbsPer100g": 12.9
+            },
+            {
+              "code": 42110160,
+              "name": "Mixed nuts, without peanuts, unsalted",
+              "netCarbsPer100g": 15.1
+            },
+            {
+              "code": 42100100,
+              "name": "Almonds, NFS",
+              "netCarbsPer100g": 10.1
+            },
+            {
+              "code": 42101000,
+              "name": "Almonds, unroasted",
+              "netCarbsPer100g": 9.1
+            },
+            {
+              "code": 42111200,
+              "name": "Peanuts, dry roasted, salted",
+              "netCarbsPer100g": 12.8
+            },
+            {
+              "code": 42100050,
+              "name": "Nuts, NFS",
+              "netCarbsPer100g": 13.6
+            },
+            {
+              "code": 42110150,
+              "name": "Mixed nuts, without peanuts, salted",
+              "netCarbsPer100g": 14.9
+            }
+          ]
+        },
+        {
+          "id": "Fish",
+          "name": "Fish",
+          "netCarbsPer100g": 4,
+          "source": "model",
+          "variants": [
+            {
+              "code": 26155110,
+              "name": "Tuna, canned, NS as to oil or water pack",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26107140,
+              "name": "Catfish, coated, fried, made with oil",
+              "netCarbsPer100g": 9.2
+            },
+            {
+              "code": 26137120,
+              "name": "Salmon, baked or broiled, made with oil",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26158010,
+              "name": "Tilapia, baked or broiled, made with oil",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26158030,
+              "name": "Tilapia, coated, fried, made with oil",
+              "netCarbsPer100g": 9.2
+            },
+            {
+              "code": 26109140,
+              "name": "Cod, coated, fried, made with oil",
+              "netCarbsPer100g": 9.2
+            },
+            {
+              "code": 26137123,
+              "name": "Salmon, baked or broiled, no added fat",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26107120,
+              "name": "Catfish, baked or broiled, made with oil",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26100270,
+              "name": "Fish stick, patty or nugget from restaurant, home, or other place",
+              "netCarbsPer100g": 20.2
+            },
+            {
+              "code": 26117140,
+              "name": "Haddock, coated, fried",
+              "netCarbsPer100g": 9.2
+            },
+            {
+              "code": 26137110,
+              "name": "Salmon, cooked, NS as to cooking method",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26137160,
+              "name": "Salmon, steamed or poached",
+              "netCarbsPer100g": 0
+            },
+            {
+              "code": 26109120,
+              "name": "Cod, baked or broiled, made with oil",
+              "netCarbsPer100g": 0.1
+            },
+            {
+              "code": 26127140,
+              "name": "Perch, coated, fried, made with oil",
+              "netCarbsPer100g": 9.2
+            },
+            {
+              "code": 26100140,
+              "name": "Fish, NS as to type, coated, fried, made with oil",
+              "netCarbsPer100g": 9.2
+            }
+          ]
+        },
+        {
+          "id": "Scrambled eggs and omelets",
+          "name": "Scrambled eggs and omelets",
+          "netCarbsPer100g": 1,
+          "source": "model",
+          "variants": [
+            {
+              "code": 32130010,
+              "name": "Egg omelet or scrambled egg, made with oil",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130060,
+              "name": "Egg omelet or scrambled egg, made with cooking spray",
+              "netCarbsPer100g": 0.9
+            },
+            {
+              "code": 32130020,
+              "name": "Egg omelet or scrambled egg, made with butter",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130080,
+              "name": "Egg omelet or scrambled egg, from fast food / restaurant",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130210,
+              "name": "Egg omelet or scrambled egg, with meat, made with oil",
+              "netCarbsPer100g": 0.8
+            },
+            {
+              "code": 32130000,
+              "name": "Egg omelet or scrambled egg, made with margarine",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130065,
+              "name": "Egg omelet or scrambled egg, NS as to fat type",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130400,
+              "name": "Egg omelet or scrambled egg, with tomatoes, fat added",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130290,
+              "name": "Egg omelet or scrambled egg, with cheese and meat, NS as to fat",
+              "netCarbsPer100g": 1.2
+            },
+            {
+              "code": 32130490,
+              "name": "Egg omelet or scrambled egg, with vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1
+            },
+            {
+              "code": 32130690,
+              "name": "Egg omelet or scrambled egg, with cheese and vegetables other than dark green and/or tomatoes, fat added",
+              "netCarbsPer100g": 1.4
+            },
+            {
+              "code": 32130070,
+              "name": "Egg omelet or scrambled egg, no added fat",
+              "netCarbsPer100g": 0.7
+            },
+            {
+              "code": 32130120,
+              "name": "Egg omelet or scrambled egg, with cheese, made with butter",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32130110,
+              "name": "Egg omelet or scrambled egg, with cheese, made with oil",
+              "netCarbsPer100g": 1.1
+            },
+            {
+              "code": 32129990,
+              "name": "Egg omelet or scrambled egg, NS as to fat",
+              "netCarbsPer100g": 0.7
+            }
+          ]
+        }
+      ],
+      "combos": [
+        {
+          "foods": [
+            "Salad vegetables",
+            "Raw tomatoes"
+          ]
+        }
+      ],
+      "mealPlans": [
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Salad vegetables",
+                "Raw tomatoes",
+                "Rice and oatmeal"
+              ],
+              "combo": [
+                "Salad vegetables",
+                "Raw tomatoes"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Fish",
+                "Milk",
+                "Scrambled eggs and omelets"
+              ],
+              "combo": null
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Nuts",
+                "Fresh fruit",
+                "Eggs boiled or fried"
+              ],
+              "combo": null
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Salad vegetables",
+                "Raw tomatoes",
+                "Nuts"
+              ],
+              "combo": [
+                "Salad vegetables",
+                "Raw tomatoes"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Eggs boiled or fried",
+                "Fish",
+                "Fresh fruit"
+              ],
+              "combo": null
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Scrambled eggs and omelets",
+                "Cooked vegetables",
+                "Rice and oatmeal"
+              ],
+              "combo": null
+            }
+          ]
+        },
+        {
+          "meals": [
+            {
+              "name": "breakfast",
+              "items": [
+                "Salad vegetables",
+                "Raw tomatoes",
+                "Nuts"
+              ],
+              "combo": [
+                "Salad vegetables",
+                "Raw tomatoes"
+              ]
+            },
+            {
+              "name": "lunch",
+              "items": [
+                "Cooked vegetables",
+                "Eggs boiled or fried",
+                "Fish"
+              ],
+              "combo": null
+            },
+            {
+              "name": "dinner",
+              "items": [
+                "Fresh fruit",
+                "Scrambled eggs and omelets",
+                "Rice and oatmeal"
+              ],
+              "combo": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
