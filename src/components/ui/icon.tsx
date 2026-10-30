@@ -8,6 +8,7 @@ const ICONS = {
   check: { ios: 'drop', android: 'water_drop', web: 'water_drop' },
   history: { ios: 'clock.arrow.circlepath', android: 'history', web: 'history' },
   info: { ios: 'info.circle', android: 'info', web: 'info' },
+  close: { ios: 'xmark', android: 'close', web: 'close' },
 } satisfies Record<string, { ios: SFSymbol; android: AndroidSymbol; web: AndroidSymbol }>;
 
 export type IconName = keyof typeof ICONS;

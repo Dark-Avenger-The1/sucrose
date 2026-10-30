@@ -12,6 +12,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useMemo } from 'react';
 import { Platform, useColorScheme } from 'react-native';
 
+import { EligibilityNoticeModal } from '@/components/results/eligibility-notice-modal';
 import { Icon } from '@/components/ui/icon';
 import type { Palette } from '@/constant/theme';
 import {
@@ -21,6 +22,7 @@ import {
   type HistoryStackParams,
   type TabParams,
 } from '@/constant/routes';
+import { EligibilityNoticeProvider, useEligibilityNotice } from '@/context/eligibility-notice-context';
 import { ServicesProvider } from '@/context/services-context';
 import { usePalette } from '@/hooks/use-theme';
 import { AboutScreen } from '@/screens/about-screen';
@@ -99,6 +101,12 @@ const linking: LinkingOptions<TabParams> = {
   },
 };
 
+/** Shows the eligibility notice above everything else while the provider says it is open. */
+function EligibilityNoticeHost() {
+  const { visible, hide } = useEligibilityNotice();
+  return <EligibilityNoticeModal visible={visible} onClose={hide} />;
+}
+
 export default function App() {
   const palette = usePalette();
   const dark = useColorScheme() === 'dark';
@@ -120,34 +128,37 @@ export default function App() {
 
   return (
     <ServicesProvider>
-      <StatusBar style="auto" />
-      <NavigationContainer theme={theme} linking={linking}>
-        <Tabs.Navigator
-          screenOptions={{
-            headerShown: false,
-            tabBarActiveTintColor: palette.accent,
-            tabBarInactiveTintColor: palette.inkTertiary,
-            tabBarLabelStyle: { color: palette.inkSecondary },
-            tabBarStyle: { backgroundColor: palette.surface, borderTopColor: palette.border },
-          }}
-        >
-          <Tabs.Screen
-            name={ROUTES.checkTab}
-            component={CheckStackScreens}
-            options={{ title: 'Check', tabBarIcon: ({ color, size }) => <Icon name="check" size={size} color={color} /> }}
-          />
-          <Tabs.Screen
-            name={ROUTES.historyTab}
-            component={HistoryStackScreens}
-            options={{ title: 'History', tabBarIcon: ({ color, size }) => <Icon name="history" size={size} color={color} /> }}
-          />
-          <Tabs.Screen
-            name={ROUTES.aboutTab}
-            component={AboutStackScreens}
-            options={{ title: 'About', tabBarIcon: ({ color, size }) => <Icon name="info" size={size} color={color} /> }}
-          />
-        </Tabs.Navigator>
-      </NavigationContainer>
+      <EligibilityNoticeProvider>
+        <StatusBar style="auto" />
+        <NavigationContainer theme={theme} linking={linking}>
+          <Tabs.Navigator
+            screenOptions={{
+              headerShown: false,
+              tabBarActiveTintColor: palette.accent,
+              tabBarInactiveTintColor: palette.inkTertiary,
+              tabBarLabelStyle: { color: palette.inkSecondary },
+              tabBarStyle: { backgroundColor: palette.surface, borderTopColor: palette.border },
+            }}
+          >
+            <Tabs.Screen
+              name={ROUTES.checkTab}
+              component={CheckStackScreens}
+              options={{ title: 'Check', tabBarIcon: ({ color, size }) => <Icon name="check" size={size} color={color} /> }}
+            />
+            <Tabs.Screen
+              name={ROUTES.historyTab}
+              component={HistoryStackScreens}
+              options={{ title: 'History', tabBarIcon: ({ color, size }) => <Icon name="history" size={size} color={color} /> }}
+            />
+            <Tabs.Screen
+              name={ROUTES.aboutTab}
+              component={AboutStackScreens}
+              options={{ title: 'About', tabBarIcon: ({ color, size }) => <Icon name="info" size={size} color={color} /> }}
+            />
+          </Tabs.Navigator>
+        </NavigationContainer>
+        <EligibilityNoticeHost />
+      </EligibilityNoticeProvider>
     </ServicesProvider>
   );
 }

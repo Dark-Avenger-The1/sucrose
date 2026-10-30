@@ -19,6 +19,8 @@ export interface Palette {
   accent: string;
   onAccent: string;
   danger: string;
+  /** Dimmed backdrop behind modals. */
+  scrim: string;
   band: Record<BandTone, { tint: string; ink: string; fill: string }>;
 }
 
@@ -34,6 +36,7 @@ const light: Palette = {
   accent: '#1E6B47',
   onAccent: '#FFFFFF',
   danger: '#B3261E',
+  scrim: 'rgba(0, 0, 0, 0.5)',
   band: {
     low: { tint: '#E7EFFA', ink: '#1C4C86', fill: '#3D74B8' },
     normal: { tint: '#E5F2EA', ink: '#1E6B47', fill: '#2F8A5E' },
@@ -54,6 +57,7 @@ const dark: Palette = {
   accent: '#6FCB98',
   onAccent: '#06160D',
   danger: '#F2B8B5',
+  scrim: 'rgba(0, 0, 0, 0.65)',
   band: {
     low: { tint: '#14223A', ink: '#A5C6F2', fill: '#6E9FDB' },
     normal: { tint: '#11261A', ink: '#93D6AF', fill: '#56B484' },
