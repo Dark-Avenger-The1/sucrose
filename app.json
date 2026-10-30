@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "scheme": "sucrose",
+    "scheme": "Sucrose",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true
@@ -40,6 +40,12 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dd26f1a8-144f-47d7-bdc8-a1ba0ff484e2"
+      }
+    },
+    "owner": "darkavengerthe1s-team"
   }
 }
