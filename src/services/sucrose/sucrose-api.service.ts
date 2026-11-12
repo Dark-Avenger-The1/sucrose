@@ -6,6 +6,7 @@ import { ServiceError, type SucroseService } from './sucrose-service';
 
 /** The hosted backend. Override with EXPO_PUBLIC_API_URL in `.env.local` (e.g. your LAN IP while developing). */
 export const DEFAULT_API_URL = 'https://sucrose-api.onrender.com/api';
+// http://192.168.1.12:3000/api local host
 
 /**
  * The model's eight glucose levels (sucrose-model-v2.json `glucose_levels`). The API does not return
